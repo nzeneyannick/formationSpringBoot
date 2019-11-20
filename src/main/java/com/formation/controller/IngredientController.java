@@ -15,7 +15,7 @@ import com.formation.service.IngredientService;
 @RequestMapping("/ingredients")
 public class IngredientController {
 
-	private IngredientService ingredientService;
+	private final IngredientService ingredientService;
 
 	public IngredientController(IngredientService ingredientService) {
 

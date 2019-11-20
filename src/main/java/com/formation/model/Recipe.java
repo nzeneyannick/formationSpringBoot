@@ -72,6 +72,15 @@ public class Recipe {
 	public void setInstructions(Set<String> instructions) {
 		this.instructions = instructions;
 	}
+	
+
+	public Set<RecipeIngredient> getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(Set<RecipeIngredient> ingredients) {
+		this.ingredients = ingredients;
+	}
 
 	@Override
 	public int hashCode() {

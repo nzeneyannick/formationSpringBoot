@@ -14,17 +14,15 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.formation.model.Ingredient;
+
 @Repository
 @Transactional
 public class IngredientRepository {
 	private final EntityManager entityManager;
-	
 
 	public IngredientRepository(EntityManager entityManager) {
-		this.entityManager=entityManager;
+		this.entityManager = entityManager;
 	}
-
-	
 
 	public List<Ingredient> getAllIngredient() {
 		List<Ingredient> listIngredient = new ArrayList<>();
@@ -52,13 +50,14 @@ public class IngredientRepository {
 		} catch (HibernateException h) {
 			h.printStackTrace();
 		}
-		return listIngredient!=null?listIngredient.get(0):null;
+		return listIngredient != null ? listIngredient.get(0) : null;
 	}
 
 	public void createIngredient(Ingredient ingredient) {
 
 		try {
-			Session session = entityManager.unwrap(Session.class);;
+			Session session = entityManager.unwrap(Session.class);
+			;
 			session.save(ingredient);
 
 		} catch (HibernateException e) {
@@ -69,15 +68,13 @@ public class IngredientRepository {
 	public void updateIngredient(Long id, Ingredient ingredient) {
 		try {
 			Session session = entityManager.unwrap(Session.class);
-	
-			
-			
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		}
 
 	}
-	public  void deleteIngredientById(Long id) {
+
+	public void deleteIngredientById(Long id) {
 		try {
 			Session session = entityManager.unwrap(Session.class);
 			Query<Ingredient> query = session.createQuery("DELETE FROM Ingredient WHERE  id =:id");
@@ -87,8 +84,6 @@ public class IngredientRepository {
 			e.printStackTrace();
 		}
 
-		
-		
 	}
 
 }

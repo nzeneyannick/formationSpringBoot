@@ -41,10 +41,9 @@ public class IngredientService {
 		return ingredientDto;
 
 	}
-	
+
 	public void deleteIngredientById(Long id) {
 		ingredientRepository.deleteIngredientById(id);
 	}
-	
 
 }
