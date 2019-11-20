@@ -29,7 +29,7 @@ public class IngredientRepository {
 		try {
 			Session session = entityManager.unwrap(Session.class);
 			@SuppressWarnings("unchecked")
-			Query<Ingredient> query = session.createQuery("from Ingredient");
+			Query<Ingredient> query = session.createQuery("FROM Ingredient");
 			listIngredient = query.list();
 
 		} catch (HibernateException h) {
@@ -43,7 +43,7 @@ public class IngredientRepository {
 		try {
 			Session session = entityManager.unwrap(Session.class);
 			@SuppressWarnings("unchecked")
-			Query<Ingredient> query = session.createQuery("FROM Ingredient where id = :id");
+			Query<Ingredient> query = session.createQuery("FROM Ingredient WHERE id = :id");
 			query.setParameter("id", id);
 			listIngredient = query.list();
 

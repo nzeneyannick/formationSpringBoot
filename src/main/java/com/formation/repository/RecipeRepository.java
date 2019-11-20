@@ -27,7 +27,7 @@ public class RecipeRepository {
 		try {
 			Session session = entityManager.unwrap(Session.class);
 			@SuppressWarnings("unchecked")
-			Query<Recipe> query = session.createQuery("from Recipe");
+			Query<Recipe> query = session.createQuery("FROM Recipe");
 			listRecipe = query.list();
 		} catch (HibernateException h) {
 			h.printStackTrace();
